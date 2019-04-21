@@ -3,16 +3,14 @@
 
 <div class="container">
   <div class="row">
-  
-   
-
     <div class="col-8">
      <%= link_to 'Add new course', new_course_path %>
      <br/>
       list of courses
 <ul>
   <% @instructors.each do |instructor| %>
-    <li><%= instructor.name %></li>
+    <li><%= instructor.name  %></li>
+      <li><%= instructor.id  %></li>
   <% end %>
 </ul>
 
