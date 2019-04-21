@@ -1,2 +1,19 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+
+
+<% @courses.each do |course| %>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="<%= course.img %>" height="200" width="200" alt="course img">
+  <div class="card-body">
+    <h5 class="card-title"><%=  course.name%></h5>
+    <p class="card-text"><%= course.desc %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Start Date: <%= course.start %></li>
+    <li class="list-group-item">End Date: <%= course.end %> </li>
+  </ul>
+  <div class="card-body">
+    <a class="card-link"><%= link_to 'Join the course', student_show_path %></a>
+  </div>
+</div>
+
+<% end %>
