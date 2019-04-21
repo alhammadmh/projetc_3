@@ -1,6 +1,37 @@
 <h1>Instructors#index</h1>
+
+
+<div class="container">
+  <div class="row">
+  
+   
+
+    <div class="col-8">
+     <%= link_to 'Add new course', new_course_path %>
+     <br/>
+      list of courses
 <ul>
   <% @instructors.each do |instructor| %>
     <li><%= instructor.name %></li>
   <% end %>
 </ul>
+
+    </div>
+    <div class="col-4">
+      added corses
+    </div>
+    
+  </div>
+</div>
+
+<% 
+=begin
+%>
+<ul>
+  <% @instructors.each do |instructor| %>
+    <li><%= instructor.name %></li>
+  <% end %>
+</ul>
+<%
+=end
+%>
