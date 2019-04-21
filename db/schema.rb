@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-ActiveRecord::Schema.define(version: 2019_04_21_085819) do
+ActiveRecord::Schema.define(version: 2019_04_21_104708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_085819) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "img"
+    t.string "type"
     t.text "desc"
     t.integer "instructor_id"
     t.datetime "created_at", null: false
