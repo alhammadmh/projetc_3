@@ -2,5 +2,12 @@
 <ul>
 
 <%= @instructor.name %>
-  
+<h3>Courses:</h3>
+<ul>
+  <% @instructor.course.each do |c| %>
+<li>
+  <%= c.name %>
+</li>
+  <% end %>
+</ul>
 </ul>
