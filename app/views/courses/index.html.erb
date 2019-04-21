@@ -1,19 +1,54 @@
 
-<h1>Courses</h1>
-<% @courses.each do |course| %>
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="<%= course.img %>" height="200" width="200" alt="course img">
-  <div class="card-body">
-    <h5 class="card-title"><%=  course.name%></h5>
-    <p class="card-text"><%= course.desc %></p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Start Date: <%= course.start %></li>
-    <li class="list-group-item">End Date: <%= course.end %> </li>
-  </ul>
-  <div class="card-body">
-    <a class="card-link"><%= link_to 'Join the course', student_show_path %></a>
-  </div>
-</div>
 
+<div class="container-fluid">
+<div class="row">
+    <div class="col-9">
+    <h1>Courses</h1>
+    </div>
+    <div class="col-3"> 
+    <h3>added course</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-9">
+    <div class="row">
+        <% @courses.each do |course| %>
+        <div class="col-4">
+        <div class="card">
+        <img class="card-img-top" src="<%= course.img %>" height="180" alt="course img">
+        <div class="card-body">
+            <h5 class="card-title"><%=  course.name%></h5>
+            <p class="card-text"><%= course.desc %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <b>Start Date:</b>  <%= course.start %></li>
+            <li class="list-group-item"> <b>End Date:</b> <%= course.end %> </li>
+        </ul>
+        <div class="card-body">
+           <a ><%= link_to 'Join the course', students_path, class:"btn btn-dark"%></a>
+        </div>
+        </div>
+        </div>
 <% end %>
+</div>
+</div>
+<div class="col-3">
+
+    <div class="card">
+        <img class="card-img-top" src="http://placehold.it/200x150" height="150" alt="course img">
+        <div class="card-body">
+            <h5 class="card-title">test</h5>
+            <p class="card-text">desc</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <b>Start Date:</b>  </li>
+            <li class="list-group-item"> <b>End Date:</b>  </li>
+        </ul>
+        <div class="card-body">
+          <a><%= link_to 'Join the course', students_path, class:"btn btn-dark"%></a>
+        </div>
+    </div>
+   
+</div>
+</div>
+</div>
