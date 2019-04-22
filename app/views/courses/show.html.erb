@@ -1,2 +1,11 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<div class="container space">
+<div class="card mb-3">
+  <img class="card-img-top" src="<%= @course.img %>" height="500" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title"><%= @course.name %></h4>
+    <h5 class="card-title"><%= @course.instructor.name %></h5>
+    <p class="card-text"><%= @course.desc %></p>
+    <p class="card-text"><small class="text-muted">Start: <%= @course.start %></small> <small class="text-muted">End: <%= @course.end %></small></p>
+  </div>
+</div>
+  </div>

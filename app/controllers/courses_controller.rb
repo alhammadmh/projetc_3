@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   def index
     @courses = Course.all
+   
   end
 
   def show
@@ -12,6 +13,7 @@ class CoursesController < ApplicationController
   end
 
   def create
+    # current_user.courses.create
     course= Course.create(course_params)
     redirect_to courses_path
   end
@@ -21,6 +23,7 @@ class CoursesController < ApplicationController
   end
 
   def update
+    # current_user.courses.create
     course = Course.find(params[:id])
     course.update(course_params) 
     redirect_to course
@@ -33,7 +36,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-  params.require(:course).permit(:name, :img, :date, :type, :desc, :instructor_id)
+  params.require(:course).permit(:name, :field, :start, :end, :img, :desc, :instructor_id)
 
   end
 end
