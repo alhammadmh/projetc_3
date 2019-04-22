@@ -17,6 +17,3 @@ Student.destroy_all
 Student.create(name:"Ahmad")
 Student.create(name:"Ali")
 Student.create(name:"Arwa")
-
-
-
