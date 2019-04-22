@@ -22,6 +22,7 @@ class CoursesController < ApplicationController
 
   def update
     course = Course.find(params[:id])
+    course << current_user
     course.update(course_params) 
     redirect_to course
   end
