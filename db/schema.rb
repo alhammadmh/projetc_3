@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 2019_04_21_190641) do
     t.bigint "student_id", null: false
   end
 
+  create_table "ingredients_recipes", id: false, force: :cascade do |t|
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
+  end
+
   create_table "instructors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
