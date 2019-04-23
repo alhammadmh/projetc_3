@@ -1,16 +1,15 @@
-<h1>Instructors#index</h1>
 
 
-<div class="container">
+
+<div class="container space">
   <div class="row">
-    <div class="col-8">
-     <%= link_to 'Add new course', new_course_path %>
+    <div class="col-8 ">
+     <%= link_to 'Add new course', new_course_path,class:"btn btn-dark" %>
      <br/>
-      list of courses
+     <h4 class="space d-flex" > Your Courses</h4>
 <ul>
   <% @instructors.each do |instructor| %>
-    <li><%= instructor.name  %></li>
-      <li><%= instructor.id  %></li>
+   
   
     <li><%= instructor.name %></li>
 
@@ -18,9 +17,7 @@
 </ul>
 
     </div>
-    <div class="col-4">
-      added corses
-    </div>
+    
     
   </div>
 </div>

@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_112204) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "img"
-    t.string "type"
     t.text "desc"
     t.integer "instructor_id"
     t.datetime "created_at", null: false
@@ -31,11 +30,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_112204) do
   create_table "courses_students", id: false, force: :cascade do |t|
     t.bigint "course_id", null: false
     t.bigint "student_id", null: false
-  end
-
-  create_table "ingredients_recipes", id: false, force: :cascade do |t|
-    t.bigint "recipe_id", null: false
-    t.bigint "ingredient_id", null: false
   end
 
   create_table "instructors", force: :cascade do |t|
