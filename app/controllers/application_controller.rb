@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
     # before_action :authenticate_user!, :except  [:index]
 
     def after_sign_in_path_for(resource)
-       if resource.instructor?
+        if resource.instructor?
             instructor_path(current_user)
         else
             student_path(current_user)
         end
-      end
+    end
 
 
     protect_from_forgery with: :exception

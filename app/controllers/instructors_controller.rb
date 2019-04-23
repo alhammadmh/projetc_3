@@ -6,7 +6,8 @@ class InstructorsController < ApplicationController
   end
 
   def show
-    @instructor = Instructor.find(current_user.id)
+    # @instructor = Instructor.find(current_user.id)
+    @instructor = Instructor.find(params[:id])
   end
 
   def new

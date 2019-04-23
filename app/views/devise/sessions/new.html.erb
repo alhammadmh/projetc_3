@@ -1,5 +1,7 @@
 <h2>Log in</h2>
 
+<div class="container-fluid">
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -19,8 +21,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in",class:'btn btn-dark' %>
   </div>
 <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
