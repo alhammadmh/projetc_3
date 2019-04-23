@@ -6,6 +6,10 @@
     <h5 class="card-title"><%= @course.instructor.name %></h5>
     <p class="card-text"><%= @course.desc %></p>
     <p class="card-text"><small class="text-muted">Start: <%= @course.start %></small> <small class="text-muted">End: <%= @course.end %></small></p>
+
+           <a ><%= link_to 'Edit', edit_course_path(@course), class:"btn btn-dark"%></a>
+   <a ><%= link_to 'Delete', course_path(@course),method: :delete , class:"btn btn-dark" , data: {confirm: "Are you sure?"}%></a>
+    <a ><%= link_to 'Join this Course', courses_path, class:"btn btn-dark"%></a>
   </div>
 </div>
   </div>
