@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
     def after_sign_in_path_for(resource)
         if resource.instructor?
-            instructor_path(current_user)
+            instructor_path(current_user.id)
         else
-            student_path(current_user)
+            student_path(current_user.id)
         end
     end
 
