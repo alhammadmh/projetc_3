@@ -5,9 +5,14 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
+    if current_user.user_type 
+      @course = Course.find_by(instructor_id)
+    else
+      @course = Course.find_by(id: params[:id])
+    end
+   
   end
-
+  
   def new 
     @course = Course.new
   end
@@ -15,6 +20,8 @@ class CoursesController < ApplicationController
   def create
     # current_user.courses.create
     @course = Course.create(course_params)
+    @course.instructor_id = current_user.id
+    @course.save
     redirect_to @course
   end
 

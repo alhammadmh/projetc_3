@@ -37,13 +37,6 @@
     
   </div>
 
-<div class="form-row">
-    <div class="col">
-   <%= f.label :instructor_id %>
-   <%= f.collection_select :instructor_id, Instructor.all, :id, :name,  class:"form-control", id:"exampleFormControlTextarea1", rows:"3",placeholder:"Description"%>
-    </div>
-    
-  </div>
 <br>
 <%= f.submit "Create New Course",class:"btn btn-dark" %>
 
