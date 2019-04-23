@@ -5,14 +5,13 @@ class CoursesController < ApplicationController
   end
 
   def show
-    if current_user.user_type 
-      @course = Course.find_by(instructor_id)
-    else
-      @course = Course.find_by(id: params[:id])
-    end
+    
+     
+      @course = Course.find( params[:id])
+
    
   end
-  
+
   def new 
     @course = Course.new
   end
