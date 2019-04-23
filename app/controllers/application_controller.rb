@@ -1,5 +1,15 @@
 class ApplicationController < ActionController::Base
     # before_action :authenticate_user!, :except  [:index]
+
+    def after_sign_in_path_for(resource)
+       if resource.instructor?
+            instructor_path(current_user)
+        else
+            student_path(current_user)
+        end
+      end
+
+
     protect_from_forgery with: :exception
 
     before_action :configure_permitted_parameters, if: :devise_controller?

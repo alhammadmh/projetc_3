@@ -6,8 +6,26 @@ class InstructorsController < ApplicationController
   end
 
   def show
-    @instructor = Instructor.find(params[:id])
+    @instructor = Instructor.find(current_user.id)
   end
 
+  def new
+    @instructor = Instructor.new
+  end
+   
+  def create
+    @instructor = Instructor.create(instructor_params)
+   
+    if @instructor.save
+      redirect_to @instructor
+    # else
+    #   render 'new'
+    end
+  end
+   
+  private
+    def instructor_params
+      params.require(:instructor).permit(:name)
+    end
   
 end
