@@ -1,15 +1,22 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.all
    
+    # if current_user.user_type
+    #   instructor_id  = current_user.id 
+    #   @courses = Course.find_by(params[:instructor_id])
+    # else
+    #   student_id  = current_user.id 
+    #   @courses = Course.find_by(params[:student_id])
+    # end
+ 
+    @courses = Course.all
+ 
+    @courses = Course.search(params[:search])
+
   end
 
   def show
-    
-     
-      @course = Course.find( params[:id])
-
-   
+      @course = Course.find(params[:id])
   end
 
   def new 
@@ -19,9 +26,7 @@ class CoursesController < ApplicationController
   def create
     # current_user.courses.create
     @course = Course.create(course_params)
-    @course.instructor_id = current_user.id
-    @course.save
-    redirect_to @course
+     redirect_to  @course
   end
 
   def edit
