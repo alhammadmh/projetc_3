@@ -12,6 +12,7 @@
     <% if user_signed_in? && current_user.user_type  %>
 
       <%  current_user.courses.each do |course| %>
+  
         <div class="col-3">
         <div class="card shadow p-3 mb-5 bg-white rounded">
       <img class="card-img-top" src="<%= course.img %>" height="180" width="150" alt="course img">
