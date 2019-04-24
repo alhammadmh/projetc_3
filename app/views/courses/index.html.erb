@@ -6,17 +6,9 @@
 <div class="row">
      <div class="col-12">
     <div class="row">
-    <%# <% if @courses != 0 %>
-      <% @courses.each do |course| %>
-        <%= current_user %> %>
-
-        
-<% if (@courses) %>
-  <% if (@courses.empty?) %>
-       <p>No courses found.</p>
-    <% else %>
-
-        <% @courses.each do |course| %>
+    <% if user_signed_in? %>
+    <%= current_user.user_type = true %>
+      <%  @courses.each do |course| %>
         <div class="col-3">
         <div class="card shadow p-3 mb-5 bg-white rounded">
         <img class="card-img-top" src="<%= course.img %>" height="180" width="150" alt="course img">
@@ -30,9 +22,24 @@
         </div>
         <br>
         </div>
-<% end %> 
+
 <% end %>
-<% end %>
+<% else %>
+<%  @courses.each do |course| %>
+<div class="col-3">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+        <img class="card-img-top" src="<%= course.img %>" height="180" width="150" alt="course img">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <b>Start Date:</b>  <%= course.start %></li>
+            <li class="list-group-item"> <b>End Date:</b> <%= course.end %> </li>
+        </ul>
+        <div class="card-body">
+           <a ><%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%></a>
+        </div>
+        </div>
+        <br>
+        </div>
+        <% end %>
 <% end %>
 
 </div>
