@@ -8,6 +8,13 @@
     <div class="row">
     <% if @courses != 0 %>
       <% @courses.each do |course| %>
+        <%= current_user %>
+<% if (@courses) %>
+  <% if (@courses.empty?) %>
+       <p>No courses found.</p>
+    <% else %>
+
+        <% @courses.each do |course| %>
         <div class="col-3">
         <div class="card shadow p-3 mb-5 bg-white rounded">
         <img class="card-img-top" src="<%= course.img %>" height="180" width="150" alt="course img">
@@ -23,6 +30,9 @@
         </div>
 <% end %> 
 <% end %>
+<% end %>
+<% end %>
+
 </div>
 </div>
 

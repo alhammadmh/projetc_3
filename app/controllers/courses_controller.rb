@@ -11,6 +11,8 @@ class CoursesController < ApplicationController
  
     @courses = Course.all
  
+    @courses = Course.search(params[:search])
+
   end
 
   def show
