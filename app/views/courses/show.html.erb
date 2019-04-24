@@ -11,7 +11,15 @@
    <a ><%= link_to 'Delete', course_path(@course),method: :delete , class:"btn btn-dark" , data: {confirm: "Are you sure?"}%></a>
   
    <% elsif  user_signed_in? && !current_user.user_type  %>
-    <a><%= link_to 'Join this Course',"#{@course.id}/add",method: "put", class:"btn btn-dark "%></a>
+   
+            <% if @course.students.include? current_user.id.to_s %>
+           <a><%= link_to 'Join this Course',"#{@course.id}/add",method: "put", class:"btn btn-dark disabled"%></a>
+
+   
+       <% else %>
+        <a><%= link_to 'Join this Course',"#{@course.id}/add",method: "put", class:"btn btn-dark "%></a>
+        <% end%>
+    
     
  <% end %>
  
