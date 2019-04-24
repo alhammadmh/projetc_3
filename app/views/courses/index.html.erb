@@ -19,9 +19,16 @@
         <ul class="list-group list-group-flush">
         <li class="list-group-item"> <%= course.name %></li>
             <li class="list-group-item"> <b>Start Date:</b>  <%= course.start %></li>
+           
             <li class="list-group-item"> <b>End Date:</b> <%= course.end %> </li>
+      
+        <% if course.students.include? current_user.id.to_s %>
+            <li class="list-group-item"> <b>Joind Course</b></li> 
+        <% end%>
         </ul>
+
         <div class="card-body">
+ 
            <a ><%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%></a>
         </div>
         </div>
@@ -38,8 +45,9 @@
             <li class="list-group-item"> <b>Start Date:</b>  <%= course.start %></li>
             <li class="list-group-item"> <b>End Date:</b> <%= course.end %> </li>
         </ul>
-        <div class="card-body">
-           <a ><%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%></a>
+        <div class="card-body row">
+
+            <%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%>  
         </div>
         </div>
         <br>

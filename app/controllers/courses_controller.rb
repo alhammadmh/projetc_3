@@ -39,16 +39,15 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
 
     unless current_user.user_type 
-      @course.students << current_user.class
-
-      
+      @course.students << current_user.id
       @course.save
-      redirect_to course_path(@course)
+      redirect_to courses_path
     else
-      redirect_to course_path(@course), flash:{error: "I"}
-      end
+      redirect_to courses_path
+    end
     
   end
+
   def destroy
     course = Course.find(params[:id])
     course.destroy
