@@ -41,7 +41,7 @@
     <%= f.text_field :instructor_id, value:current_user.id  %>
 </div>
 <br>
-<%= f.submit "Create New Course",class:"btn btn-dark"%>
+<%= f.submit "Create New Course",class:"btn btn-dark", onclick: "alert('Course created successfully')"%>
 
 <% end %>
 </div>
