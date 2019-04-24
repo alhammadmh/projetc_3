@@ -12,7 +12,12 @@
        <div class="carousel-caption d-none d-md-block">
            <h5><b> Follow your Passion</b></h5>
           <p>Passion is energy. Feel the power that comes from focusing on what excites you</p>
-           <%= link_to 'Join Now', new_user_registration_path,class:"btn btn-dark"  %> 
+
+           <% if user_signed_in? && !current_user.user_type  %>
+         <%= link_to 'Join Now',courses_path,class:"btn btn-dark"  %>
+         <%elsif !user_signed_in?%> 
+         <%= link_to 'Join Now',new_user_session_path,class:"btn btn-dark"  %>
+         <%end %>
         </div>
     </div>
     <div class="carousel-item" data-interval="7000">
@@ -20,7 +25,11 @@
        <div class="carousel-caption d-none d-md-block">
            <h5><b> Follow your Passion</b></h5>
                     <p>Passion is energy. Feel the power that comes from focusing on what excites you</p>
-         <%= link_to 'Join Now', new_user_registration_path,class:"btn btn-dark"  %> 
+         <% if user_signed_in? && !current_user.user_type  %>
+         <%= link_to 'Join Now',courses_path,class:"btn btn-dark"  %>
+         <%elsif !user_signed_in? %> 
+         <%= link_to 'Join Now',new_user_session_path,class:"btn btn-dark"  %>
+         <%end %>
 
         </div>
     </div>
@@ -29,7 +38,11 @@
        <div class="carousel-caption d-none d-md-block">
           <h5><b> Follow your Passion</b></h5>
                     <p>Passion is energy. Feel the power that comes from focusing on what excites you</p>
-           <%= link_to 'Join Now', new_user_registration_path,class:"btn btn-dark"  %> 
+          <% if user_signed_in? && !current_user.user_type  %>
+         <%= link_to 'Join Now',courses_path,class:"btn btn-dark"  %>
+         <%elsif !user_signed_in? %> 
+         <%= link_to 'Join Now',new_user_session_path,class:"btn btn-dark"  %>
+         <%end %>
         </div>
     </div>
      <div class="carousel-item" data-interval="7000">
@@ -37,7 +50,11 @@
        <div class="carousel-caption d-none d-md-block">
        <h5><b> Follow your Passion</b></h5>
                     <p>Passion is energy. Feel the power that comes from focusing on what excites you</p>
-         <%= link_to 'Join Now', new_user_registration_path,class:"btn btn-dark"  %> 
+        <% if user_signed_in? && !current_user.user_type  %>
+         <%= link_to 'Join Now',courses_path,class:"btn btn-dark"  %>
+         <%elsif !user_signed_in? %> 
+         <%= link_to 'Join Now',new_user_session_path,class:"btn btn-dark"  %>
+         <%end %>
         </div>
     </div>
   </div>

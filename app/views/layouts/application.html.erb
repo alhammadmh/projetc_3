@@ -52,8 +52,8 @@
             <%end%>
            
               <li>
-              <div class="nav-link ">  <%= link_to current_user.name, edit_user_registration_path , style: 'color:#A9A9A9;'%><%#- =current_user.user_type-%><img src='/assets/user.png' width='20px' /></div>
-              
+              <div class="nav-link ">  <%= link_to current_user.name, edit_user_registration_path , style: 'color:#A9A9A9;'%><img src='/assets/user.png' width='20px' /></div>
+
               </li>
               <li>
                 <%= link_to 'Log Out',  destroy_user_session_path, class:"nav-link", method: :delete %>
@@ -69,11 +69,6 @@
         </ul>
   </div>
 </nav>
-<div class="container">
- <%if notice %><div class="alert alert-info"> <%= notice %> <%end%>
-</div>
- <%if alert %><div class="alert alert-warning"> <%= alert %><%end%>
-</div>
 </div>
     <%= yield %>
 
