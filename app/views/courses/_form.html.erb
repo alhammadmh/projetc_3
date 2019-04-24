@@ -1,0 +1,46 @@
+<%= form_for @course do |f| %>
+<div class="card shadow p-3 mb-5 bg-white rounded">
+  <div class="form-row">
+    <div class="col">
+    <%= f.label :name %>
+     <%= f.text_field :name ,class:"form-control",placeholder:"Course Name"%>
+    </div>
+    <div class="col">
+    <%= f.label :field %>
+  <%= f.text_field :field ,class:"form-control",placeholder:"Course Field"%> 
+    
+    </div>
+  </div>
+   <div class="form-row">
+    <div class="col">
+     <%= f.label :start %>
+   <%= f.datetime_field :start ,class:"form-control",placeholder:"Start DateTime"%>
+    </div>
+    <div class="col">
+  <%= f.label :end %>
+ <%= f.datetime_field :end ,class:"form-control",placeholder:"End DateTime"%> 
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+   <%= f.label :img %>
+    <%= f.text_field :img ,class:"form-control",placeholder:"Image Url"%>
+    </div>
+    
+  </div>
+<div class="form-row">
+    <div class="col">
+   <%= f.label :desc %>
+   <%= f.text_area :desc,class:"form-control", id:"exampleFormControlTextarea1", rows:"3",placeholder:"Description"%>
+    </div>
+    
+  </div>
+  <div class="des" >
+  <%= f.label :instructor %>
+    <%= f.text_field :instructor_id, value:current_user.id  %>
+</div>
+<br>
+<%= f.submit "Create New Course",class:"btn btn-dark" %>
+
+<% end %>
+</div>
