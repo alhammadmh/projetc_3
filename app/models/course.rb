@@ -1,4 +1,11 @@
 class Course < ApplicationRecord
-    belongs_to :instructor
-    has_and_belongs_to_many :students
+
+    def self.search(search)
+        if search
+          where('name LIKE ?', "%#{search}%")
+        else
+          all
+        end
+      end
+
 end
