@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_04_24_130542) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "img"
-    t.string "type"
     t.text "desc"
     t.integer "instructor_id"
     t.datetime "created_at", null: false
