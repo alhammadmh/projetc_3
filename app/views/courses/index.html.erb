@@ -9,6 +9,7 @@
 <div class="row space">
      <div class="col-12">
     <div class="row">
+
     <% if user_signed_in? && current_user.user_type  %>
 
       <%  current_user.courses.each do |course| %>
@@ -27,8 +28,30 @@
         </div>
         <br>
         </div>
+        <% end %>
 
-<% end %>
+        <% elsif user_signed_in? && current_user.user_type == false  %>
+      <%  @courses.each do |course| %>
+      <div class="col-3">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+        <img class="card-img-top" src="<%= course.img %>" height="180" width="150" alt="course img">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <b>Start Date:</b>  <%= course.start %></li>
+            <li class="list-group-item"> <b>End Date:</b> <%= course.end %> </li>
+
+        <% if course.students.include? current_user.id.to_s %>
+            <li class="list-group-item"> <b>Joind Course</b></li> 
+        <% end%>
+        </ul>
+
+        <div class="card-body row">
+            <%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%>  
+        </div>
+        </div>
+        <br>
+        </div>
+        <% end %>
+        
 <% else %>
 <%  @courses.each do |course| %>
 <div class="col-3">
@@ -38,8 +61,9 @@
             <li class="list-group-item"> <b>Start Date:</b>  <%= course.start %></li>
             <li class="list-group-item"> <b>End Date:</b> <%= course.end %> </li>
         </ul>
-        <div class="card-body">
-           <a ><%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%></a>
+        <div class="card-body row">
+
+            <%= link_to 'Learn More...', course_path(course), class:"btn btn-dark"%>  
         </div>
         </div>
         <br>

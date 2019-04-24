@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
 
+  put "/courses/:id/add" => "courses#add_student"
   # redirect to instructors 
   # devise_scope :user do
   #   authenticated :user do

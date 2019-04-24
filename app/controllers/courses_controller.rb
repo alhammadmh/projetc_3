@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new
+
   end
 
   def create
@@ -16,8 +17,11 @@ class CoursesController < ApplicationController
     if current_user.user_type
       @course = Course.create(course_params)
       @course.instructor_id = current_user.id  
+      @course.new_course = true 
       @course.save
+
       redirect_to  @course
+
     else
       redirect_to  user_path(current_user)
     end
@@ -39,16 +43,15 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
 
     unless current_user.user_type 
-      @course.students << current_user.class
-
-      
+      @course.students << current_user.id
       @course.save
-      redirect_to course_path(@course)
+      redirect_to courses_path
     else
-      redirect_to course_path(@course), flash:{error: "I"}
-      end
+      redirect_to courses_path
+    end
     
   end
+
   def destroy
     course = Course.find(params[:id])
     course.destroy
