@@ -1,3 +1,4 @@
+
 <%= form_for @course do |f| %>
 <div class="card shadow p-3 mb-5 bg-white rounded">
   <div class="form-row">
@@ -40,7 +41,7 @@
     <%= f.text_field :instructor_id, value:current_user.id  %>
 </div>
 <br>
-<%= f.submit "Create New Course",class:"btn btn-dark" %>
+<%= f.submit "Create New Course",class:"btn btn-dark"%>
 
 <% end %>
 </div>

@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new
+
   end
 
   def create
@@ -16,8 +17,11 @@ class CoursesController < ApplicationController
     if current_user.user_type
       @course = Course.create(course_params)
       @course.instructor_id = current_user.id  
+      @course.new_course = true 
       @course.save
+
       redirect_to  @course
+
     else
       redirect_to  user_path(current_user)
     end
