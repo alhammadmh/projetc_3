@@ -50,7 +50,8 @@
             <%end%>
            
               <li>
-                <p class="nav-link"><%= current_user.name%> <%#- =current_user.user_type-%><img src='/assets/user.png' width='20px' /> </p> 
+              <div class="nav-link ">  <%= link_to current_user.name, edit_user_registration_path , style: 'color:#A9A9A9;'%><%#- =current_user.user_type-%><img src='/assets/user.png' width='20px' /></div>
+              
               </li>
               <li>
                 <%= link_to 'Log Out',  destroy_user_session_path, class:"nav-link", method: :delete %>

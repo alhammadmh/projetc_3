@@ -2,10 +2,12 @@
 <div class="container-fluid">
 <div class="col-9 space">
     <h1>Courses</h1>
-    </div>
+    </div>  
 <div class="row">
      <div class="col-12">
     <div class="row">
+    <% if @courses != 0 %>
+      <% @courses.each do |course| %>
         <%= current_user %>
 <% if (@courses) %>
   <% if (@courses.empty?) %>
@@ -26,6 +28,7 @@
         </div>
         <br>
         </div>
+<% end %> 
 <% end %>
 <% end %>
 <% end %>
@@ -35,3 +38,4 @@
 
 </div>
 </div>
+

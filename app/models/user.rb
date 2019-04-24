@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+  
+  has_many :instructor_courses, class_name: "Enrolled", foreign_key: "instructor_id"
+  has_many :student_courses, class_name: "Enrolled", foreign_key: "student_id"
+  has_many :enrolleds
+
   has_many :courses, class_name:  "Course", primary_key: "id", foreign_key: "user_id"
 
 
