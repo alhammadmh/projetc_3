@@ -9,7 +9,6 @@ class CoursesController < ApplicationController
     #   @courses = Course.find_by(params[:student_id])
     # end
  
-    @courses = Course.all
  
     @courses = Course.search(params[:search])
 

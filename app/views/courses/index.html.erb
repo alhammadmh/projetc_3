@@ -6,9 +6,11 @@
 <div class="row">
      <div class="col-12">
     <div class="row">
-    <% if @courses != 0 %>
+    <%# <% if @courses != 0 %>
       <% @courses.each do |course| %>
-        <%= current_user %>
+        <%= current_user %> %>
+
+        
 <% if (@courses) %>
   <% if (@courses.empty?) %>
        <p>No courses found.</p>
