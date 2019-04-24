@@ -1,15 +1,6 @@
 class CoursesController < ApplicationController
   def index
    
-    # if current_user.user_type
-    #   instructor_id  = current_user.id 
-    #   @courses = Course.find_by(params[:instructor_id])
-    # else
-    #   student_id  = current_user.id 
-    #   @courses = Course.find_by(params[:student_id])
-    # end
- 
-    # @courses = Course.all
  
     @courses = Course.search(params[:search])
 
@@ -34,9 +25,7 @@ class CoursesController < ApplicationController
   end
 
   def update
-    # current_user.courses.create
     course = Course.find(params[:id])
-    course << current_user
     course.update(course_params) 
     redirect_to course
   end
