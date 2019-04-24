@@ -5,7 +5,7 @@
   <div class="card-body">
     <h4 class="card-title"><%= @course.name %></h4>
             <p class="card-text"> <b>Instructor: </b><%= @course.instructor.name %></p>
-    <p class="card-text"><b>Description: </b><%= @course.desc %></p>
+    <p class="card-text"><b>Description:</b><%= @course.desc %></p>
     <p class="card-text"><small class="text-muted">Start: <%= @course.start %></small> <small class="text-muted">End: <%= @course.end %></small></p>
 <% if user_signed_in? && current_user.user_type  %>
    <a ><%= link_to 'Edit', edit_course_path(@course), class:"btn btn-dark"%></a>
