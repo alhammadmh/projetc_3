@@ -1,4 +1,5 @@
 Learning Together
+
 This project was bootstrap with Rails on Ruby app
 
 # Learning Together app
