@@ -1,24 +1,25 @@
-# README
+Learning Together
+This project was bootstrap with Rails on Ruby app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Learning Together app
+This project created with Rails on Ruby
 
-Things you may want to cover:
+## Table of Contents
+* [Introduction](#Introduction)
+* [Technologies](#technologies)
+* [Launch](#launch)
 
-* Ruby version
+## Introduction
+This project aimed to increase learning and share skills between people based on Do It Yourself (DIY) approach.
 
-* System dependencies
+## Technologies
+Project is created with:
+* Ruby 2.6.2
+* Rails 5.2.3
+* Devise gem for Ruby on Rails authentication
+* Bootstrap  4.3.1
+* PostgreSQL database
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Launch
+https://dry-plains-47575.herokuapp.com/homes
